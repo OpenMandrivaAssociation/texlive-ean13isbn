@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/ean13isbn
+# catalog-date 2008-08-19 08:58:40 +0200
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-ean13isbn
 Version:	20080819
 Release:	1
@@ -41,6 +47,7 @@ actual barcode.
 %doc %{_texmfdistdir}/doc/latex/ean13isbn/README
 %doc %{_texmfdistdir}/doc/latex/ean13isbn/ean13isbn.pdf
 %doc %{_texmfdistdir}/doc/latex/ean13isbn/ean13isbn.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ actual barcode.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
