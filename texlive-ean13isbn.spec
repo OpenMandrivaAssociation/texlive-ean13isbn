@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-ean13isbn
-Version:	20080819
-Release:	10
+Version:	20170414
+Release:	1
 Summary:	Print EAN13 for ISBN
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ean13isbn
