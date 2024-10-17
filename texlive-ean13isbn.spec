@@ -3,7 +3,7 @@ Version:	57514
 Release:	2
 Summary:	Print EAN13 for ISBN
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ean13isbn
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ean13isbn
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.doc.r%{version}.tar.xz
