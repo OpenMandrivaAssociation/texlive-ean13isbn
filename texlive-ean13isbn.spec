@@ -1,44 +1,22 @@
-Name:		texlive-ean13isbn
-Version:	57514
-Release:	2
+%global tl_name ean13isbn
+%global tl_revision 57514
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Print EAN13 for ISBN
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ean13isbn
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ean13isbn.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides the means to typeset ISBN codes with EAN-
-13; it uses the (generic) package ean13.tex to typeset the
-actual barcode.
+The package provides the means to typeset ISBN codes with EAN-13; it
+uses the (generic) package ean13.tex to typeset the actual barcode.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/ean13isbn/ean13isbn.sty
-%doc %{_texmfdistdir}/doc/latex/ean13isbn/License.txt
-%doc %{_texmfdistdir}/doc/latex/ean13isbn/README
-%doc %{_texmfdistdir}/doc/latex/ean13isbn/ean13isbn.pdf
-%doc %{_texmfdistdir}/doc/latex/ean13isbn/ean13isbn.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
